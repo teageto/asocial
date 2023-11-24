@@ -9,11 +9,10 @@ module.exports = {
 				.setName('usuario')
 				.setDescription('Usuario del que quieres mostrar la foto.')
 				.setRequired(true)),
-
+	category: 'utility',
 	async execute(interaction) {
 		const usuario = interaction.options.getUser('usuario');
-		const avatar = usuario.avatar;
-
-		await interaction.reply((avatar));
+		if (usuario) return interaction.reply(`${usuario.username} avatar: ${usuario.displayAvatarURL()}`);
+		return interaction.reply(`Your avatar: ${interaction.user.displayAvatarURL()}`);
 	},
 };

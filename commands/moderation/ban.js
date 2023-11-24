@@ -11,6 +11,7 @@ module.exports = {
 				.setRequired(true))
 		.setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
 		.setDMPermission(false),
+	category: 'moderation',
 	async execute(interaction) {
 		const target = interaction.options.getUser('objetivo');
 
