@@ -13,6 +13,5 @@ module.exports = {
 	async execute(interaction) {
 		const usuario = interaction.options.getUser('usuario');
 		if (usuario) return interaction.reply(`${usuario.username} avatar: ${usuario.displayAvatarURL()}`);
-		return interaction.reply(`Your avatar: ${interaction.user.displayAvatarURL()}`);
 	},
 };

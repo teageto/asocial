@@ -38,9 +38,4 @@ for (const folder of commandFolders) {
 	}
 }
 
-
-client.on('interactionCreate', async interaction => {
-	if (!interaction.isChatInputCommand()) return;
-});
-
 client.login(token);

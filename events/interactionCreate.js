@@ -1,8 +1,7 @@
 const { Events } = require('discord.js');
 
-
 module.exports = {
-	name: Events.InteractionCreate,
+	data: Events.InteractionCreate, 
 	async execute(interaction) {
 		if (!interaction.isChatInputCommand()) return;
 
@@ -15,7 +14,8 @@ module.exports = {
 
 		try {
 			await command.execute(interaction);
-		} catch (error) {
+		}
+		catch (error) {
 			console.error(`Error executing ${interaction.commandName}`);
 			console.error(error);
 		}
