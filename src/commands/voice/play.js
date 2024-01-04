@@ -19,7 +19,9 @@ module.exports = {
 				adapterCreator: channel.guild.voiceAdapterCreator,
 			});
 
-			interaction.reply('¡Conectado al canal de voz!');
+			if (connection) {
+				interaction.reply('¡Conectado al canal de voz!');
+			}
 		} 
 		catch (error) {
 			console.error(error);
