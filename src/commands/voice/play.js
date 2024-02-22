@@ -4,7 +4,12 @@ const { SlashCommandBuilder } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('play')
-		.setDescription('Play a song'),
+		.setDescription('Play a song')
+		.addStringOption(option => 
+			option.setName('song')
+		          .setDescription('url/name of the song')
+				  .setRequired(true)),
+	category: 'voice',
 	async execute(interaction) {
 		const channel = interaction.member.voice.channel;
 
